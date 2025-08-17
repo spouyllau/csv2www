@@ -39,7 +39,7 @@ location /csv2www/ {
 
 ## Utilisation
 
-- Modifiez config.cfg pour définir les chemins du fichier CSV, le dossier de sortie et les options de formatage. Le programme est dynamique et s'adapte directement aux champs de votre fichier CSV.
+- Modifiez config.cfg pour définir les chemins du fichier CSV, le dossier de sortie et les options de formatage (titres, langues, etc.). Le programme est dynamique et s'adapte directement aux champs de votre fichier CSV.
 
 - Adaptez style.css pour modifier les style CSS de la page Web qui contiendra les informations de votre fichier CSV.
 

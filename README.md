@@ -41,7 +41,7 @@ location /csv2www/ {
 
 ## Usage
 
-- Edit config.cfg to define the paths for the CSV file, the output folder, and the formatting options. The program is dynamic and adapts directly to the fields in your CSV file.
+- Edit config.cfg to define the paths for the CSV file, the output folder, and the formatting options (language, title). The program is dynamic and adapts directly to the fields in your CSV file.
 
 - Adapt style.css to modify the CSS styles of the web page that will contain the information from your CSV file.
 
