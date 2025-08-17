@@ -84,7 +84,7 @@ my $url = $cgi->url(-path_info => 1, -query => 1);
 my $ico = $config->{ico} // 'csv.png';
 
 print start_html(
-    -title    => 'csv2www',
+    -title    => $page_title_text,
     -encoding => 'UTF-8',
     -style    => { -src => 'style.css' },
     -lang     => $page_lang,
