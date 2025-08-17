@@ -39,9 +39,12 @@ location /csv2www/ {
 
 ## Utilisation
 
+- Définisez un fichier CSV avec vos données (via des outils tels que LibreOffice, OpenRefine, Excell, etc.) et déposez dans l'espace du serveur (ex. : /var/www/html/csv2www/) ou se trouve csv2www.pl.
+
 - Modifiez config.cfg pour définir les chemins du fichier CSV, le dossier de sortie et les options de formatage (titres, langues, etc.). Le programme est dynamique et s'adapte directement aux champs de votre fichier CSV.
 
 - Adaptez style.css pour modifier les style CSS de la page Web qui contiendra les informations de votre fichier CSV.
+
 
 ## Exemple 
 Une instance du programme est maintenu sur [https://www.stephanepouyllau.org/csv2www/csv2www.pl](https://www.stephanepouyllau.org/csv2www/csv2www.pl) à titre de démonstration.

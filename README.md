@@ -41,9 +41,13 @@ location /csv2www/ {
 
 ## Usage
 
-- Edit config.cfg to define the paths for the CSV file, the output folder, and the formatting options (language, title, etc.). The program is dynamic and adapts directly to the fields in your CSV file.
+- Create a CSV file with your data (using tools such as LibreOffice, OpenRefine, Excel, etc.) and place it in the server space (e.g., /var/www/html/csv2www/) where csv2www.pl is located.
+
+- Edit config.cfg to define the paths of the CSV file, the output folder, and the formatting options (titles, languages, etc.). The program is dynamic and adapts directly to the fields in your CSV file.
 
 - Adapt style.css to modify the CSS styles of the web page that will contain the information from your CSV file.
+
+Translated with DeepL.com (free version)
 
 ## Example
 A example (with french data) is awailable at [https://www.stephanepouyllau.org/csv2www/csv2www.pl](https://www.stephanepouyllau.org/csv2www/csv2www.pl). 
