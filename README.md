@@ -1,6 +1,6 @@
 # CSV2WWW
 ## Project Overview
-csv2www is a Perl-based tool that reads data from CSV files and generates corresponding HTML pages for web display. The program is configurable via config.cfg to adapt to different CSV formats and output requirements.
+csv2www is a Perl program (meaning it runs on a web server) that allows you to publish the information contained in a CSV file on the web in a dynamic way, with options for graphic customization (via a CSS style sheet). The program displays the contents of the CSV file in the form of a list of data tables accessible via indexes and a small search engine. The indexes and search engine are configurable (via a CFG configuration file). The program adapts to all CSV file structures. Perl was chosen for its durability over time and because it runs on most academic web servers.
 ## Requirements
 - Perl (version 5 or higher)
 - Web server: Apache or Nginx
