@@ -81,14 +81,14 @@ my $page_lang = $config->{page_lang} // 'en';
 my $page_intro_text = $config->{page_intro} // '';
 my $page_title_text = $config->{page_title} // 'CSV Viewer';
 my $url = $cgi->url(-path_info => 1, -query => 1);
-my $ico = $config->{ico} // 'csv.png';
+my $illus = $config->{illus};
 
 print start_html(
     -title    => $page_title_text,
     -encoding => 'UTF-8',
     -style    => { -src => 'style.css' },
     -lang     => $page_lang,
-    -meta     => {'robots'=>'follow, index', 'description'=>$page_intro_text, 'og:title'=>$page_title_text, 'og:url'=>$url, 'og:image'=>$ico, 'og:locale'=>$page_lang, 'og:type'=>'website'}
+    -meta     => {'robots'=>'follow, index', 'description'=>$page_intro_text, 'og:title'=>$page_title_text, 'og:url'=>$url, 'og:image'=>$illus, 'og:locale'=>$page_lang, 'og:type'=>'website'}
 );
 
 # -----------------------------
@@ -96,8 +96,14 @@ print start_html(
 # -----------------------------
 my $page_title_text = $config->{page_title} // 'CSV Viewer';
 my $page_intro_text = $config->{page_intro} // '';
+my $ico = $config->{ico} // 'csv2www.png';
 print qq{
-<h1 class="title">$page_title_text</h1>
+<table>
+  <tr>
+    <td><img src="$ico" width="50" height="50"/></td>
+    <td><h1 class="title">$page_title_text</h1></td>
+  </tr>
+</table>
 <p class="description">$page_intro_text</p>
 };
 
