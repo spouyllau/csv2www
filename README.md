@@ -1,5 +1,4 @@
-# README
-English Version
+# CSV2WWW
 ## Project Overview
 csv2www is a Perl-based tool that reads data from CSV files and generates corresponding HTML pages for web display. The program is configurable via config.cfg to adapt to different CSV formats and output requirements.
 ## Requirements
