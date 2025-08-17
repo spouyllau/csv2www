@@ -88,7 +88,7 @@ print start_html(
     -encoding => 'UTF-8',
     -style    => { -src => 'style.css' },
     -lang     => $page_lang,
-    -meta     => {'robots'=>'follow, index', 'description'=>$page_intro_text, 'og:title'=>$page_title_text, 'og:url'=>$url, 'og:image'=>$illus, 'og:locale'=>$page_lang, 'og:type'=>'website'}
+    -meta     => {'robots'=>'follow, index', 'title'=>$page_intro_text, 'description'=>$page_intro_text, 'og:description'=>$page_intro_text, 'twitter:description'=>$page_intro_text, 'og:title'=>$page_title_text, 'twitter:title'=>$page_title_text, 'og:url'=>$url, 'og:image'=>$illus, 'og:logo'=>$illus, 'og:locale'=>$page_lang, 'og:type'=>'website', 'twitter:image'=>$illus}
 );
 
 # -----------------------------
