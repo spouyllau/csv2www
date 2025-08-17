@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.title {
+    text-align: left;
+}
+
+.description {
+    text-align: justify;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+.csv_table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.csv_table th, .csv_table td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+.csv_table th {
+    background-color: #f2f2f2;
+    width: 150px;
+}
+
+.alpha_index a, .pagination a {
+    margin-right: 5px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.alpha_index a:hover, .pagination a:hover {
+    text-decoration: underline;
+}
+
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.footer{
+    text-align: center;
+    font-size: 0.1em;
+    margin-top: 10px;
+}
