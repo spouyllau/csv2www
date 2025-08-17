@@ -42,3 +42,6 @@ location /csv2www/ {
 ## Usage
 
 Edit config.cfg to specify CSV file paths, output folder, and formatting options. This program is dynamic and detect all structure from CSV.
+
+## Example
+A example is awailable at [https://www.stephanepouyllau.org/csv2www/csv2www.pl](https://www.stephanepouyllau.org/csv2www/csv2www.pl). 
