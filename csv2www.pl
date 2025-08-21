@@ -9,12 +9,16 @@ use HTML::Entities qw(encode_entities);
 
 binmode(STDOUT, ":encoding(UTF-8)");
 
+# -------------------------------
+# csv2www : main script
+# -------------------------------
+
 # -----------------------
 # --- Read config     ---
 # -----------------------
 sub read_config {
     my ($file) = @_;
-    open my $fh, "<:encoding(utf8)", $file or die "Impossible d'ouvrir $file: $!";
+    open my $fh, "<:encoding(utf8)", $file or die "Impossible d'ouvrir/Can't open $file: $!";
     my %config;
     while (<$fh>) {
         chomp;
@@ -116,42 +120,19 @@ if ($cgi->param('reset')) {
     $alpha_field = '';
     $page   = 1;
 }
-
 my $search_escaped = encode_entities($search);
 my $button_ok = $config->{button_ok} // 'Search';
 my $button_raz = $config->{button_raz} // 'Reset';
+my $input_search = $config->{input_search} // 'Search';
+my $button_clean = $config->{button_clean} // 'Search';
 print qq{
 <form method="get">
-Recherche: <input type="text" name="search" value="$search_escaped">
-<input type="submit" value="$button_ok">
-<input type="submit" name="reset" value="$button_raz">
+$input_search: <input type="text" name="search" value="$search_escaped">
+<input type="submit" name="ok" value="$button_ok">
+<input type="submit" name="reset" value="$button_raz"> | 
+<input type="submit" value="$button_clean">
 </form>
 };
-
-# ------------------
-# --- HTML pager ---
-# ------------------
-
-# --- Index ---
-print alpha_index_menu();
-
-# --- Pager ---
-print pagination_links($page, $total_pages);
-
-# -- Counters ---
-print result_counter($total_rows, \@page_rows);
-
-# --- Table ---
-print generate_html_tables($header, \@page_rows);
-
-# --- Pager ---
-print pagination_links($page, $total_pages);
-
-# --- Footer ---
-print footer();
-
-# --- EOF ---
-print end_html;
 
 # -----------------------
 # --- Perl functions ----
@@ -163,7 +144,7 @@ sub result_counter {
     return qq{
     <div class="result_count">
         Résultats trouvés : $total_rows 
-        (dont $shown affichés sur cette page)
+        (dont $shown affichés sur cette page).
     </div>
     };
 }
@@ -303,6 +284,31 @@ sub alpha_index_menu {
 sub footer {
     my $title = $config->{footer} // 'CSV Viewer - © Stéphane Pouyllau';
     my $html = qq{<div class="footer">$title</div><br>};
-    $html .= '<!-- CSV Viewer © 2025 Stéphane POUYLLAU -->';
+    $html .= '<!-- csv2www © 2025 Stéphane POUYLLAU -->';
     return $html;
 }
+
+# ------------------
+# --- HTML pager ---
+# ------------------
+
+# --- Index ---
+print alpha_index_menu();
+
+# --- Pager ---
+print pagination_links($page, $total_pages);
+
+# -- Counters ---
+print result_counter($total_rows, \@page_rows);
+
+# --- Table ---
+print generate_html_tables($header, \@page_rows);
+
+# --- Pager ---
+print pagination_links($page, $total_pages);
+
+# --- Footer ---
+print footer();
+
+# --- EOF ---
+print end_html;
