@@ -9,12 +9,16 @@ use HTML::Entities qw(encode_entities);
 
 binmode(STDOUT, ":encoding(UTF-8)");
 
+# -------------------------------
+# csv2www : main script
+# -------------------------------
+
 # -----------------------
 # --- Read config     ---
 # -----------------------
 sub read_config {
     my ($file) = @_;
-    open my $fh, "<:encoding(utf8)", $file or die "Impossible d'ouvrir $file: $!";
+    open my $fh, "<:encoding(utf8)", $file or die "Impossible d'ouvrir/Can't open $file: $!";
     my %config;
     while (<$fh>) {
         chomp;
@@ -140,7 +144,7 @@ sub result_counter {
     return qq{
     <div class="result_count">
         Résultats trouvés : $total_rows 
-        (dont $shown affichés sur cette page)
+        (dont $shown affichés sur cette page).
     </div>
     };
 }
