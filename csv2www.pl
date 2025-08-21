@@ -280,7 +280,7 @@ sub alpha_index_menu {
 sub footer {
     my $title = $config->{footer} // 'CSV Viewer - © Stéphane Pouyllau';
     my $html = qq{<div class="footer">$title</div><br>};
-    $html .= '<!-- CSV Viewer © 2025 Stéphane POUYLLAU -->';
+    $html .= '<!-- csv2www © 2025 Stéphane POUYLLAU -->';
     return $html;
 }
 
