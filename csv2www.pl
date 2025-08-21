@@ -116,42 +116,19 @@ if ($cgi->param('reset')) {
     $alpha_field = '';
     $page   = 1;
 }
-
 my $search_escaped = encode_entities($search);
 my $button_ok = $config->{button_ok} // 'Search';
 my $button_raz = $config->{button_raz} // 'Reset';
+my $input_search = $config->{input_search} // 'Search';
+my $button_clean = $config->{button_clean} // 'Search';
 print qq{
 <form method="get">
-Recherche: <input type="text" name="search" value="$search_escaped">
-<input type="submit" value="$button_ok">
-<input type="submit" name="reset" value="$button_raz">
+$input_search: <input type="text" name="search" value="$search_escaped">
+<input type="submit" name="ok" value="$button_ok">
+<input type="submit" name="reset" value="$button_raz"> | 
+<input type="submit" value="$button_clean">
 </form>
 };
-
-# ------------------
-# --- HTML pager ---
-# ------------------
-
-# --- Index ---
-print alpha_index_menu();
-
-# --- Pager ---
-print pagination_links($page, $total_pages);
-
-# -- Counters ---
-print result_counter($total_rows, \@page_rows);
-
-# --- Table ---
-print generate_html_tables($header, \@page_rows);
-
-# --- Pager ---
-print pagination_links($page, $total_pages);
-
-# --- Footer ---
-print footer();
-
-# --- EOF ---
-print end_html;
 
 # -----------------------
 # --- Perl functions ----
@@ -306,3 +283,28 @@ sub footer {
     $html .= '<!-- CSV Viewer © 2025 Stéphane POUYLLAU -->';
     return $html;
 }
+
+# ------------------
+# --- HTML pager ---
+# ------------------
+
+# --- Index ---
+print alpha_index_menu();
+
+# --- Pager ---
+print pagination_links($page, $total_pages);
+
+# -- Counters ---
+print result_counter($total_rows, \@page_rows);
+
+# --- Table ---
+print generate_html_tables($header, \@page_rows);
+
+# --- Pager ---
+print pagination_links($page, $total_pages);
+
+# --- Footer ---
+print footer();
+
+# --- EOF ---
+print end_html;
